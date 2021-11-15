@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+
+body{
+    /* background-color: var(--surface-c); */
+    height: 900px;
+    font-family: var(--font-family);
+}
+html{
+    background-color: var(--surface-100);
+    color: var(--text-color);
+}
+h3{
+    margin: 0px;
+}
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.row1{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+}
+#card{
+    width: 70px;
+    height: 50px;
+    text-align: center;
+}
+#tarjeta{
+    text-align:left;
+}
+.col1{
+    column-count: 1;
+    column-width:auto;
+    column-rule-style:dashed;
+    min-height: 400px;
+}
+.col{
+    display: flex;
+    align-items: center;
+}
+.error{
+    color: rgb(230, 226, 225);
+    background-color: var(--pink-300);
+
+}
+.spin{
+    visibility: visible;
+}
+.spinOculto{
+    visibility: hidden;
+}
+#divVisible{
+    visibility: visible;
+}
+#divOculto{
+    visibility: hidden;
+}

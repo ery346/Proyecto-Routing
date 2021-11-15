@@ -1,0 +1,49 @@
+
+<h5 style="text-align: center;">Teorema de Pitagoras</h5>
+<hr>
+<form (ngSubmit)="recolectarResultados()">
+    <div class="row">
+       <p-card>
+        <div class="p-col-12 p-md-4">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon" style="width: 100px;"><i class="">Hipotenusa</i></span>
+                <input type="number" pInputText name="res" [(ngModel)]="objeto.hipotenusa" >         
+             </div>
+                
+             <p></p>
+                
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon" style="width: 100px;"><i class="">Cateto a</i></span>
+                <input type="number" pInputText name="vol" [(ngModel)]="objeto.catetoa" >         
+             </div>
+                
+             <p></p>
+               
+            <div class="p-inputgroup">
+                 <span class="p-inputgroup-addon" style="width: 100px;"><i class="">Cateto b</i></span>
+                <input type="number" pInputText name="cor" [(ngModel)]="objeto.catetob" >         
+            </div>
+            <hr>
+            <span>
+                <button pButton 
+                        type="submit" 
+                        label="Calcular" 
+                        class="p-button-help"
+                        ></button>
+            </span>
+            <span class="row">
+                <p></p>
+                 {{MostrarResultado1 | slice:0:23  | uppercase }}
+                {{error}}
+            </span>
+            <hr>
+                <p>
+                Perimetro: <u>{{Perimetro | number}}</u>
+                </p>
+                Area: <u>{{Area | number}}</u>
+        </div>
+    </p-card>
+    </div>
+       
+</form>
+

@@ -1,0 +1,19 @@
+<h1 style="text-align: center;">Division</h1>
+<p-card  >
+  <div class="row" >
+  <p-inputNumber [(ngModel)]="val"></p-inputNumber>
+  <p-card id="card">/</p-card>
+  <p-inputNumber [(ngModel)]="val2"></p-inputNumber>
+  <button pButton 
+          type="button" 
+          label="Calcular" 
+          class="p-button-help"
+          (click)="calcular()"></button>
+  </div>
+  <p></p>
+</p-card>
+<div style="text-align: center;">
+  Resultado: 
+  <p></p>
+  {{ resultado }}
+</div>

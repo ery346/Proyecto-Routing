@@ -1,0 +1,39 @@
+<h2 style="margin: 4px;">Rick And Morty's Api</h2>
+<div class="row" style="height: 40px; color: rgb(187, 185, 189);">
+Busca el nombre del personaje o coloca una letra para empezar !!!
+</div>
+<div class="row1">
+    <input type="text" (keyup.enter)="personajes()" pInputText [style]="{ height: '40px'}" #text />
+    <button pButton (click)="personajes()" [style]="{ height: '40px'}" class="p-button-raised p-button-help p-button-text"> <small>Buscar</small></button>
+
+</div>
+<hr>
+<div class="row">
+    <label style="border-radius: 20px;padding-inline: 10px;" class="{{class}}"><h4>{{error}}</h4></label>
+    <span class="{{spinner}}"><p-progressSpinner [style]="{width: '90px', height: '40px'}" animationDuration=".5s" strokeWidth="8"></p-progressSpinner></span>
+</div>
+<div class="row" >
+    
+    <div class="col1">
+        <p></p>
+        <div *ngFor="let i of resultado">
+            <p-card>
+                <div id="tarjeta">
+                    Nombre: {{i.name | uppercase}}
+                    <p></p>
+                    <li>Estatus: {{i.status| uppercase}}</li> 
+                    <li>Especie: {{i.species | uppercase}}</li> 
+                    <li>Genero: {{i.gender | uppercase}}</li> 
+                    <li>Locacion: {{i.location.name | uppercase}}</li> 
+                    <li>Origen: {{i.origin.name | uppercase}}</li> 
+                </div>
+                <p></p>
+                <img  src="{{i.image}}" alt="" >
+            </p-card>
+            <hr>
+        </div>
+    </div>
+  
+</div>
+
+

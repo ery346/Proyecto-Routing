@@ -1,0 +1,43 @@
+<div class="row1">
+  <h4>Recolecta informacion oficial que ofrece la nasa, dichos datos se actualizan al dia... 
+    Dale Click!!!!</h4>
+</div>
+<hr>
+<div class="row1">
+    <button pButton 
+        type="button" 
+        label="Traer Datos" 
+        [disabled]="boton"
+        class="p-button-outlined p-button-help"
+        (click)="getDatos()"
+ ></button>
+</div>
+<hr>
+<div class="row">
+  <span class="{{spinner}}"><p-progressSpinner [style]="{width: '90px', height: '40px'}" animationDuration=".5s" strokeWidth="8"></p-progressSpinner></span>
+</div>
+
+<div id="{{div}}">
+  <h3>{{ titulo }}</h3>
+  <p></p>
+  <div class="row">
+    <p></p>
+    <p-image src="{{imagen}}" alt="Image" width="300" height="300"></p-image>
+  </div>
+  <div class="row" style="text-align: justify; padding-right: 2rem;">
+    <ul>
+      <li>{{fecha}}</li>
+        <hr>
+      <li>{{descripcion}}</li>
+        <hr>
+      <li>{{copyright}}</li>
+        <hr>
+    </ul>
+  </div>
+
+</div>
+           
+   
+
+
+

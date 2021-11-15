@@ -1,0 +1,49 @@
+
+<h5 style="text-align: center;">Ley de Ohm</h5>
+<hr>
+<form class="row" (ngSubmit)="calcular()">
+    <div class="p-grid p-fluid ">
+        <p></p>
+        <div class="p-col-12 p-md-4">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon" style="width: 144px;"><i class="">Resistencia( R )</i></span>
+                <p-inputNumber type="number" pInputText name="res" [(ngModel)]="objeto.valorR" ></p-inputNumber>         
+            </div>
+        </div>
+        <p></p>
+        <div class="p-col-12 p-md-4">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon" style="width: 144px;"><i class="">Voltage( V )</i></span>
+                <p-inputNumber type="number" pInputText name="vol" [(ngModel)]="objeto.valorV" ></p-inputNumber>         
+            </div>
+        </div>
+        <p></p>
+        <div class="p-col-12 p-md-4">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon" style="width: 144px;"><i class="">Corriente( I )</i></span>
+                <p-inputNumber type="number" pInputText name="cor" [(ngModel)]="objeto.valorI" ></p-inputNumber>         
+            </div>
+        </div>
+        <p></p>
+        <div class="p-col-12 p-md-4">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon" style="width: 144px;"><i class="">Potencia( W )</i></span>
+                <p-inputNumber type="number" pInputText name="pot" [(ngModel)]="objeto.valorW"></p-inputNumber>         
+            </div>
+        </div>
+        <p></p>
+        <p></p>
+        <h1> <u>{{error}} </u></h1>
+        <button pButton 
+        type="submit" 
+        label="Calcular" 
+        class="p-button-help"
+        ></button>
+        <p></p>
+        <button pButton type="button" iconPos="left" icon="pi pi-trash"  label="Limpiar" (click)="limpiar()" class="p-button-danger"></button>
+ 
+    </div>
+</form>
+
+   
+
