@@ -9,6 +9,8 @@ import {SplitterModule} from 'primeng/splitter';
 import {ImageModule} from 'primeng/image';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {InputTextModule} from 'primeng/inputtext';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import {InputTextModule} from 'primeng/inputtext';
     SplitterModule,
     ImageModule,
     ProgressSpinnerModule,
-    InputTextModule
+    InputTextModule,
+    MessageModule,
+    MessagesModule
   ]
 })
 export class PrimeNgModule { }

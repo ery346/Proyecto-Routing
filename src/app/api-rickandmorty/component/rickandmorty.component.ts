@@ -25,6 +25,7 @@ export class RickandmortyComponent  {
   class: string = '';
   error: string = '';
   spinner: string = 'spinOculto';
+  div: string = 'divOculto';
   @ViewChild('text') buscar! : ElementRef<HTMLInputElement>
 
   // perso: Personajes | any = '';
@@ -33,13 +34,14 @@ export class RickandmortyComponent  {
 
   personajes(){
     const valor = this.buscar.nativeElement.value;
+    this.div = 'divOculto';
     this.class = '';
     this.error = '';
-
     if(valor === ''){
       this.spinner = 'spin'
       setTimeout(() => {
-      this.spinner = 'spinOculto'
+      this.spinner = 'spinOculto';
+      this.div ='divVisible';
       this.nombres = '';
       this.estatus = '';
       this.especie = '';
@@ -47,7 +49,7 @@ export class RickandmortyComponent  {
       this.genero = '';
       this.origen = '';
       this.locacion = '';
-      this.error = 'Ingresa algun nombre de la caricatura o alguna letra';
+      this.error = 'ERROR!! Ingresa algun nombre de la caricatura o alguna letra';
       this.class = 'error';
     }, 2000);
     }else{
@@ -55,8 +57,9 @@ export class RickandmortyComponent  {
       this.spinner = 'spin'
       this.servicio.getPersonajes( valor ).subscribe( (datos: Personajes) => {
         setTimeout(() => {
-          this.spinner = 'spinOculto';
-        this.class = '';
+      this.spinner = 'spinOculto';
+      this.div = 'divOculto';
+      this.class = '';
       this.error = '';
       this.resultado = datos.results;
       console.log(this.resultado)
@@ -73,7 +76,7 @@ export class RickandmortyComponent  {
       this.genero = '';
       this.origen = '';
       this.locacion = '';
-
+      this.div ='divVisible';
       this.class = 'error';
       this.error = 'Error de Busqueda!!!!';
       }, 3000);

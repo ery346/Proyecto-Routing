@@ -9,7 +9,8 @@ import { LeydeohmComponent } from '../leydeohm/leydeohm.component';
 import { TeoremadepitagorasComponent } from '../teoremadepitagoras/teoremadepitagoras.component';
 import { ApiNasaComponent } from '../api-nasa/component/api-nasa.component';
 import { RickandmortyComponent } from '../api-rickandmorty/component/rickandmorty.component';
-import { DbComponent } from '../basededatos/component/db.component';
+import { ClimaComponent } from '../api-clima/component/clima.component';
+
 
 
 const rutas: Routes = [
@@ -47,8 +48,8 @@ const rutas: Routes = [
     component: RickandmortyComponent,
   },
   {
-    path: 'ingresar',
-    component: DbComponent,
+    path: 'clima',
+    component: ClimaComponent,
   },
   {
     path: '**',

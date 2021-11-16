@@ -5,20 +5,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
 import { PrimeNgModule } from './prime-ng/prime-ng.module';
+
 import { BasicosModule } from './basicos/basicos.module';
 import { AppRouterModule } from './router/app.router.module';
 import { LeyohmModule } from './leydeohm/leyohm.module';
 import { TeoremaModule } from './teoremadepitagoras/teorema.module';
 import { ApiNasaModule } from './api-nasa/api-nasa.module';
 import { RickandmortyModule } from './api-rickandmorty/rickandmorty.module';
-import { DbComponent } from './basededatos/component/db.component';
-import { DbModule } from './basededatos/db.module';
+import { ClimaModule } from './api-clima/clima.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -29,8 +28,7 @@ import { DbModule } from './basededatos/db.module';
     TeoremaModule,
     ApiNasaModule,
     RickandmortyModule,
-    DbModule
-
+    ClimaModule
   ],
   
   providers: [],

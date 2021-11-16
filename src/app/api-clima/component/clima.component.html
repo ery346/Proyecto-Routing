@@ -1,0 +1,16 @@
+<h3>Busca el clima en cualquier ciudad del mundo</h3>
+<input type="text" (keydown.enter)="getDatos()" #texto pInputText />
+
+<p-button pButton (click)="getDatos()" ></p-button>
+
+<li>{{ ciudad }}</li>
+<li>{{ pais }}</li>
+<li>{{sensacion}}</li>
+<li>{{humedad}} </li>
+<li>{{presion}}</li>
+<li>{{temperatura}}</li>
+<li>{{descripcion}}</li>
+<li>{{ viento }}</li>
+ 
+
+
