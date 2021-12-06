@@ -45,7 +45,7 @@ export class ApiNasaComponent {
         this.titulo = data.title;
         this.imagen = data.url;
         this.fecha = `Fecha: ${data.date}`;
-        this.descripcion = `Descripcion ${data.explanation}`;
+        this.descripcion = `${data.explanation}`;
         this.copyright = `Copiright: ${data.copyright}`;
         
       });

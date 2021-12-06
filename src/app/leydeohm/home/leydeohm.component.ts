@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { valores } from '../interface/interface.interface';
+import { valores } from '../../interface/interface.interface';
 
 @Component({
   selector: 'app-leydeohm',
@@ -8,7 +8,7 @@ import { valores } from '../interface/interface.interface';
   ]
 })
 export class LeydeohmComponent  {
-
+ 
   objeto: valores = {
   valorR: 0,
   valorV: 0,
@@ -16,6 +16,7 @@ export class LeydeohmComponent  {
   valorW: 0,
   }
 
+  display!: boolean;
 
   error: string = '';
   
@@ -83,5 +84,6 @@ export class LeydeohmComponent  {
     this.objeto.valorI = 0;
     this.objeto.valorW = 0;
   }
+
 
 }

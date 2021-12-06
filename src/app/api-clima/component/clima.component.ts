@@ -1,8 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Clima } from 'src/app/interface/interface.interface';
-
 import { ApiClimaService } from '../service/api-clima.service';
-
 
 @Component({
   selector: 'app-clima',
@@ -11,49 +9,88 @@ import { ApiClimaService } from '../service/api-clima.service';
   ]
 })
 export class ClimaComponent {
- 
   ciudad: string = '';
   pais: string = '';
-  sensacion: string = '';
+  sensacion: number = 0;
   humedad: string = '';
-  presion: string = '';
-  temperatura: string = '';
-  tempMax: string = '';
-  tempMin: string = '';
+  presion: number = 0;
+  temp: number = 0;
+  tempMax: number = 0;
+  tempMin: number = 0;
   descripcion: string = '';
   viento: string = '';
-  celsiusTem: number = 0;
-  celsiusSens: number = 0;
-  celsiusMax: number = 0;
-  celsiusMin: number = 0;
 
-    @ViewChild('texto') buscar! : ElementRef<HTMLInputElement>
+  idOcultar: string = 'divOculto';
+  cambioTemp: string = '';
+  cambioPresion: string = '';
+  unidadT: string = 'K';
+  unidadP: string = 'hPa';
+  @ViewChild('texto') buscar! : ElementRef<HTMLInputElement>
 
   constructor(private service: ApiClimaService) { }
 
   getDatos(){
-    const value = this.buscar.nativeElement.value
+    const valor = this.buscar.nativeElement.value
+    switch (valor) {
+      case '':
+        this.idOcultar = 'divOculto';
+        break;
+    
+      default:
+        this.service.getdatos( valor ).subscribe((datos: Clima) => {
+        
+        setTimeout(() => {
+        this.idOcultar = 'divVisible';
+        this.ciudad = datos.name;
+        this.pais = datos.sys.country;
+        this.sensacion = datos.main.feels_like;
+        this.humedad = datos.main.humidity.toString();
+        this.presion = datos.main.pressure;
+        this.tempMax = datos.main.temp_max;
+        this.tempMin = datos.main.temp_min;
+        this.temp = datos.main.temp;
+        this.descripcion = datos.weather[0].description;
+        this.viento = datos.wind.speed.toString();
+        }, 500);
+      
+      }, (error) => {
+        this.idOcultar = 'divOculto';
+      })
+        break;
+    }
+    
+
+  }
   
-    this.service.getdatos( value ).subscribe((datos: Clima) => {
-      console.log(datos)
-
-      this.celsiusSens = (datos.main.feels_like) - (273.15);
-      this.celsiusTem = (datos.main.temp) - (273.15);
-      this.celsiusMax = (datos.main.temp_max) - (273.15);
-      this.celsiusMin = (datos.main.temp_min) - (273.15);
-
-      this.ciudad = datos.name;
-      this.pais = datos.sys.country;
-      this.sensacion = this.celsiusSens.toString();
-      this.humedad = datos.main.humidity.toString();
-      this.presion = datos.main.pressure.toString();
-      this.tempMax = this.celsiusMax.toString();
-      this.tempMin = this.celsiusMin.toString();
-      this.temperatura = this.celsiusTem.toString();
-      this.descripcion = datos.weather[0].description;
-      this.viento = datos.wind.speed.toString();
-
-    })
+////////unidad temp////////////////
+  Celsius(valor: string){
+    this.cambioTemp = valor;
+    this.unidadT = '°C';
+  }
+  Kelvin(valor: string){
+    this.cambioTemp = valor;
+    this.unidadT = 'K';
+  }
+  Fahrenheit(valor: string){
+    this.cambioTemp = valor;
+    this.unidadT = '°F';
+  }
+///////////unidad presion////////////////////
+  Pascales(valor: string){
+    this.cambioPresion = valor;
+    this.unidadP = 'hPa';
+  }
+  Bar(valor: string){
+    this.cambioPresion = valor;
+    this.unidadP = 'b';
+  }
+  Torr(valor: string){
+    this.cambioPresion = valor;
+    this.unidadP = 'Torr';
+  }
+  Atmosfera(valor: string){
+    this.cambioPresion = valor;
+    this.unidadP = 'atm';
   }
 
 }

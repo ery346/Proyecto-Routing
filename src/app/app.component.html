@@ -1,5 +1,5 @@
 <p-menubar [model]="items" ><i class="pi pi-slack" style="font-size: 3rem"> </i></p-menubar>
-<div style="text-align: end;"><small>{{fecha}}</small></div>
+<div style="text-align: end;"><small>{{fecha | date: 'MMMM dd, yyyy' | titlecase}}</small></div>
 
 <router-outlet></router-outlet>
 

@@ -1,16 +1,52 @@
 <h3>Busca el clima en cualquier ciudad del mundo</h3>
-<input type="text" (keydown.enter)="getDatos()" #texto pInputText />
+<div class="row">
+    <input type="text" placeholder="Buscar ciudad..." (keydown.enter)="getDatos()" #texto pInputText />
+    <p-button pButton (click)="getDatos()" >Buscar</p-button>
+</div>
 
-<p-button pButton (click)="getDatos()" ></p-button>
+<div class="row">
+    <div id="{{idOcultar}}" style="text-align: justify;">
+        {{ ciudad | uppercase}}, {{ pais }}
+        <li>Temperatura: {{temp | temperatura: cambioTemp | number: '1.2-2'}} <code>{{ unidadT }}</code></li>
+        <li>Humedad: {{humedad}} <code>%</code></li>
+        <li>Sensacion: {{sensacion | temperatura: cambioTemp |number: '1.2-2'}} <code>{{ unidadT }}</code> </li>
+        <li>Presion Atmosferica: {{ presion | presion : cambioPresion | number: '1.2'}} <code>{{ unidadP }}</code> </li>
+        <li>TempMax: {{tempMax | temperatura: cambioTemp | number: '1.2-2'}} <code>{{ unidadT }}</code></li>
+        <li>TempMin: {{tempMin | temperatura: cambioTemp | number: '1.2-2'}} <code>{{ unidadT }}</code></li>
+        <li>{{descripcion | titlecase}}</li>
+        <li>Viento: {{ viento }} <code>m/s2</code> </li>
+    </div>
+    
+</div>
+<p></p>
 
-<li>{{ ciudad }}</li>
-<li>{{ pais }}</li>
-<li>{{sensacion}}</li>
-<li>{{humedad}} </li>
-<li>{{presion}}</li>
-<li>{{temperatura}}</li>
-<li>{{descripcion}}</li>
-<li>{{ viento }}</li>
+<div class="row">
+    <p-card>
+        <div class="row">
+            Cambia la unidad de temperatura
+            <p></p>
+        </div>
+        <button pButton (click)="Celsius('ce')" label="Celsius"></button>
+        <button pButton (click)="Kelvin('ke')" label="Kelvin"></button>
+        <button pButton (click)="Fahrenheit('fa')" label="Fahrenheit"></button>
+        
+    </p-card>
+</div>
+
+<div class="row">
+    <p-card>
+        <div class="row">
+            Cambia la unidad de Presion
+            <p></p>
+        </div>
+        <button pButton (click)="Pascales('pa')" label="Pascales"></button>
+        <button pButton (click)="Bar('bar')" label="Bar"></button>
+        <button pButton (click)="Torr('torr')" label="Torr"></button>
+        <button pButton (click)="Atmosfera('atm')" label="Atmosfera"></button>
+        
+    </p-card>
+</div>
+
  
 
 

@@ -3,7 +3,7 @@
 Busca el nombre del personaje o coloca una letra para empezar !!!
 </div>
 <div class="row1">
-    <input type="text" (keyup.enter)="personajes()" pInputText [style]="{ height: '40px'}" #text />
+    <input type="text" placeholder="Buscar personaje..." (keyup.enter)="personajes()" pInputText [style]="{ height: '40px'}" #text />
     <button pButton (click)="personajes()" [style]="{ height: '40px'}" class="p-button-raised p-button-help p-button-text"> <small>Buscar</small></button>
 
 </div>

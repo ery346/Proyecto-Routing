@@ -1,0 +1,39 @@
+
+<form >
+    <div class="row">
+        
+       <p-card>
+        <h2>Accede con tu cuenta</h2>
+        <div class="p-col-12 p-md-4">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon" style="width: 100px;"><i class="">Usuario</i></span>
+                <input type="text" pInputText name="res"  >         
+             </div>
+                
+             <p></p>
+                
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon" style="width: 100px;"><i class="">Contraseña</i></span>
+                <input type="text" pInputText name="vol"  >         
+             </div>
+             
+            <hr>
+            <span>
+                <button pButton 
+                        type="button" 
+                        label="ingresar" 
+                        class="p-button-help"
+                        (click)="login()"
+                        routerLink="/leydeohm"
+                        ></button>
+            </span>
+
+        </div>
+        <hr>
+        <a routerLink="/ingresar" style="background-color: whitesmoke;">Regresar</a>
+        <!-- routerlink manda la ruta el modulo donde estan las rutas hijas aqui regresa al otro componente -->
+    </p-card>
+    
+    </div>
+       
+</form>

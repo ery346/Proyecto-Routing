@@ -4,8 +4,6 @@ import { RickandmortyService } from '../service/rickandmorty.service';
 
 import { Personajes, Result } from 'src/app/interface/interface.interface';
 
-
-
 @Component({
   selector: 'app-rickandmorty',
   templateUrl: './rickandmorty.component.html',
@@ -30,9 +28,10 @@ export class RickandmortyComponent  {
 
   // perso: Personajes | any = '';
   constructor(private servicio: RickandmortyService) { }
-  
 
   personajes(){
+
+
     const valor = this.buscar.nativeElement.value;
     this.div = 'divOculto';
     this.class = '';

@@ -9,12 +9,18 @@ import {MenuItem} from 'primeng/api';
 export class AppComponent implements OnInit {
  
   items: MenuItem[] = [];
-  fecha: string | [] = '';
+  fecha: any  
 
   ngOnInit() {
     let date = new Date();
-    this.fecha = `${date}`.slice(0, 21);
+    // this.fecha = `${date}`.slice(0, 21);
+    this.fecha = date;
       this.items = [
+          {
+            label: 'Ingresar',
+            icon: 'pi pi-sign-in',
+            routerLink: 'ingresar'
+          },
           {
             label: 'Operaciones Basicas',
             icon: 'pi pi-fw pi-pencil',
@@ -43,7 +49,7 @@ export class AppComponent implements OnInit {
           {
             label: 'Ley de Ohm',
             icon: 'pi pi-bolt',
-            routerLink: 'leydehom'
+            routerLink: 'leydeohm'
           },
           {
             label: 'Teorema de pitagoras',
@@ -69,7 +75,7 @@ export class AppComponent implements OnInit {
                 icon: 'pi pi-cloud',
                 routerLink: 'clima'
               },
-            ]
+            ],
           }
       ];
   }

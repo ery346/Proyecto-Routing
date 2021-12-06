@@ -1,4 +1,4 @@
-
+<h3><a routerLink="/ingresar"  style="background-color: rgba(224, 224, 224, 0.603); border-radius: 2px;">Accede a una cuenta para contenido </a></h3>
 <h5 style="text-align: center;">Ley de Ohm</h5>
 <hr>
 <form class="row" (ngSubmit)="calcular()">
@@ -44,6 +44,25 @@
  
     </div>
 </form>
+<p></p>
 
+<p-sidebar [(visible)]="display">
+ 
+        <ul>
+            <li><a routerLink="/leydeohm/circuitorc"  style="color: rgba(219, 114, 240, 0.842); "> <code>Calcular circuito RC</code></a></li>
+            <li>
+             <a routerLink="/leydeohm/resistenciasp" 
+             style="color: rgba(219, 114, 240, 0.842); "> <code>Calcular Resistencias en Paralelo </code> </a>
+            </li>
+            <li><a routerLink="/leydeohm/impedancia"  style="color: rgba(219, 114, 240, 0.842); "> <code>Calcula la impedancia de un circuito</code></a></li>
+        </ul>
    
+</p-sidebar>
+
+<p-button pbutton type="button" (click)="display = true" >
+    Prueba otras formulas
+</p-button>
+
+
+
 

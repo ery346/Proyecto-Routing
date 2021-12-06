@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { obj } from '../interface/interface.interface';
+import { obj } from 'src/app/interface/interface.interface';
 
 @Component({
   selector: 'app-teoremadepitagoras',
